@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Cards {
+
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in,"UTF-8");
+		
+		System.out.println("Enter symbol:");
+		String symbol=input.nextLine();
+		
+		switch(symbol){
+		
+		case "2":System.out.println("Valid Symbol");break;
+		case "3":System.out.println("Valid Symbol");break;
+		case "4":System.out.println("Valid Symbol");break;
+		case "5":System.out.println("Valid Symbol");break;
+		case "6":System.out.println("Valid Symbol");break;
+		case "7":System.out.println("Valid Symbol");break;
+		case "8":System.out.println("Valid Symbol");break;
+		case "9":System.out.println("Valid Symbol");break;
+		case "10":System.out.println("Valid Symbol");break;
+		case "J":System.out.println("Valid Symbol");break;
+		case "Q":System.out.println("Valid Symbol");break;
+		case "K":System.out.println("Valid Symbol");break;
+		case "A":System.out.println("Valid Symbol");break;
+		
+		default:System.out.println("Invalid Symbol");break;
+		}
+
+		input.close();
+	}
+
+}

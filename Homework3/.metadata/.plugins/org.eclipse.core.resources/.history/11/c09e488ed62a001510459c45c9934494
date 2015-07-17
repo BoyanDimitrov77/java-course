@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class SumOfNumbers {
+
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in,"UTF-8");
+		
+		int number=input.nextInt();
+		int sum=0;		
+				
+		while(true){
+			if(number!=0){
+				sum+=number;
+			}
+			break;
+		}
+
+		System.out.println(sum);
+		
+		input.close();
+	}
+
+}

@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class CalculateFactorial {
+
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in,"UTF-8");
+		
+		System.out.println("Enter N:");
+		int N=input.nextInt();
+		System.out.println("Enter K:");
+		int K=input.nextInt();
+		
+		int result_N=1;
+		int result_K=1;
+		
+		if(1<K && K<N){
+		
+		for(int i=0;i<N;i++){
+			
+			result_N*=(N-i);
+			
+		}
+		for(int i=0;i<K;i++){
+			
+			result_K*=(K-i);
+		}
+
+		System.out.println("N!/K!="+(result_N/result_K));
+		
+		}else{
+			System.err.println();
+		}
+		input.close();
+		
+	}
+
+}

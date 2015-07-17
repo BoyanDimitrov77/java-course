@@ -1,0 +1,60 @@
+import java.util.Scanner;
+public class Switch {
+
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in,"UTF-8");
+		
+		System.out.println("Enter number:");
+		int number=input.nextInt();
+
+		switch(number){
+		
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+		case 5:{
+			if(number%2==0){
+				System.out.println("The number is even");
+			}else{
+				System.out.println("The number is odd");
+			}		
+		}
+		break;
+		case 6:
+		case 7:
+		case 8:
+		case 9:
+		case 10:
+		case 11:
+		case 12:
+		case 13:
+		case 14:
+		case 15:{
+			if(number%3==0){
+				System.out.println("The number is divided without remainder");
+			}else{
+				System.out.println("The number is divided with remaider " +number%3 );
+				
+			}
+			
+			
+		}
+		break;
+		case 16:{
+			if(number>0){
+				System.out.println("The number is positive");
+				
+			}else{
+				System.out.println("The numbe is negative");
+				
+			}
+			
+		}
+     }
+		
+		
+		input.close();
+	}
+
+}

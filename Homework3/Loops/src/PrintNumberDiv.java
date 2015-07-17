@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class PrintNumberDiv {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in, "UTF-8");
+
+		System.out.println("Enter number");
+		int N = input.nextInt();
+
+		for (int i = 1; i <= N; i++) {
+
+			if (i % 3 == 0 && i % 7 == 0) {
+				continue;
+			} else {
+				System.out.println(i);
+
+			}
+		}
+
+		input.close();
+
+	}
+
+}

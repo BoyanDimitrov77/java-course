@@ -1,0 +1,26 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+
+public class SumEvenElementArray {
+
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in,"UTF-8");
+		
+		System.out.println("Enter size of array:");
+		int length=input.nextInt();
+		
+		int array[]=new int[length];
+		System.out.println("Enter" +length+ " numbers");
+		
+		for(int index=0;index<length;index++){
+			array[index]=input.nextInt();
+			
+		}
+		System.out.println(Arrays.toString(array));
+
+		
+		input.close();
+	}
+
+}

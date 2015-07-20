@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class PrintNumberDev {
+
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in,"UTF-8");
+		
+		System.out.println("Enter a:");
+		int a=input.nextInt();
+		
+		System.out.println("Enter b:");
+		int b=input.nextInt();
+		
+		if(a<b){
+			for(int i=a;i<=b;i++){
+				if(i%3==0){
+					System.out.println(i);
+					
+				}
+				
+			}
+			
+		}else{
+			System.err.println("Error");
+			
+		}
+		
+		input.close();
+	}
+
+}

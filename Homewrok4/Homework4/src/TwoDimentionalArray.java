@@ -1,0 +1,34 @@
+import java.util.Arrays;
+
+public class TwoDimentionalArray {
+
+	public static void main(String[] args) {
+		int matrix[][] = new int[4][4];
+
+		for (int row = 0; row < matrix.length; row++) {
+
+			for (int colon = 0; colon < matrix[0].length; colon++) {
+
+				matrix[row][colon] = (row * matrix[0].length) + colon + 1;
+			}
+
+		}
+
+		System.out.println(Arrays.deepToString(matrix));
+
+		for (int row = 0; row < matrix.length; row++) {
+			for (int colon = 0; colon < matrix[0].length; colon++) {
+				int number = matrix[row][colon];
+				if (number % 2 != 0 || number == 0) {
+					matrix[row][colon] = number * 2;
+
+				}
+
+			}
+
+		}
+		System.out.println(Arrays.deepToString(matrix));
+
+	}
+
+}

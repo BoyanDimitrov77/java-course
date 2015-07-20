@@ -1,0 +1,32 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+
+public class FibonacciArray {
+
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in,"UTF-8");
+		
+		System.out.println("Enter size of array");
+		int length=input.nextInt();
+		
+		int array[]=new int[length];
+		
+		array[0]=0;
+		array[1]=1;
+		
+		int fib1=1;
+		int fib2=1;
+		int fibonacci;
+		for(int i=3;i<length;i++){
+			fibonacci=fib1+fib2;
+			fib1=fib2;
+			fib2=fibonacci;
+			array[i]=fibonacci;
+			
+		}
+		System.out.println(Arrays.toString(array));
+		input.close();
+	}
+
+}

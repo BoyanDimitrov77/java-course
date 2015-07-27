@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class SymmetricalNumber {
+
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in,"UTF-8");
+		System.out.println("Check if this number is simetrical");
+		
+
+	}
+
+	public static int printSymetricalNumber(int[] number){
+		
+		
+	}
+}

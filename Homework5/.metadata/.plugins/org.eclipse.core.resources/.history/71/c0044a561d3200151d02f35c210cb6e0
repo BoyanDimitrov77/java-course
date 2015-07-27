@@ -1,0 +1,37 @@
+public class SymmetricalNumber {
+
+	public static void main(String[] args) {
+	
+		for(int i=10;i<=999;i++){
+		
+			printSymmetricalNumber(i);
+			
+		}
+		
+
+	}
+
+	public static void printSymmetricalNumber(int number){
+		//convert int to string
+		String checkNum=Integer.toString(number);
+		
+		//reverse string
+		String reverseNum="";
+		for(int i=checkNum.length()-1;i>=0;i--){
+		reverseNum=reverseNum+checkNum.charAt(i);
+		}
+		//convert string to int
+		int compareNum=Integer.parseInt(reverseNum);
+		
+		//compare numbers
+		if(number==compareNum){
+			System.out.println(number);
+		}
+			
+		
+		
+		
+		
+		
+	
+}

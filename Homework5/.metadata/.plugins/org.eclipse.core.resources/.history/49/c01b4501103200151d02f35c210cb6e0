@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class MaxNumber {
+
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in,"UTF-8");
+		
+		int max=maxNumber(1,7);
+		System.out.println(max);
+		
+         input.close();
+	}
+
+	public static int maxNumber(int number1,int number2){
+		
+		int max;
+		if(number1>number2){
+			max=number1;
+		}else{
+			max=number2;
+		}
+		
+		return max;
+	}
+	
+}

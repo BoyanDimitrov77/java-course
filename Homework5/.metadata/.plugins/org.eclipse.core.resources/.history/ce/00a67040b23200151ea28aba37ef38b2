@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class Permutation {
+
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in,"UTF-8");
+		System.out.println("Enter n:");
+		int n=input.nextInt();
+		
+		printPermutation(n);
+
+		input.close();
+	} 
+    public static void printPermutation(int n){
+	
+	int calculateP=1;
+	for(int i=1;i<=n;i++){
+		
+		calculateP*=i;
+	}
+	
+	int array[]=new int[calculateP];
+	for(int i=0;i<array.length;i++){
+		array[i]=i+1;
+		
+		
+	}
+	
+	
+	
+	
+}
+	
+}

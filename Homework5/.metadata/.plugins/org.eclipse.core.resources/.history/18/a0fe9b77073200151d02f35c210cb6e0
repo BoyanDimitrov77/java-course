@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class SumRecursion {
+
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in,"UTF-8");
+		
+		System.out.println("Enter number between[10;30000]");
+		int number=input.nextInt();
+        int sum=0;
+		int saveNumbersArray[]=new int[number];
+		int array[]=calculateSum(number,saveNumbersArray);
+		
+		for(int i=0;i<array.length;i++){
+			sum=+array[i];
+			
+		}
+		System.out.println(sum);
+		
+		//int sum=calculateSum(number);
+		//System.out.println(sum);
+		input.close();
+	}
+
+	/*public static int calculateSum(int number){
+		
+		if(number>0){
+			number--;
+			calculateSum(number);
+		}
+		int sum=0;
+		return sum=+number;
+		
+		
+		
+	}*/
+	
+	public static int[] calculateSum(int number,int[] array){
+		if(number>0){
+			number--;
+			array[number]=number;
+			calculateSum(number,array);
+			
+		}
+		return array;
+		
+		
+		
+		
+	}
+	
+	
+}

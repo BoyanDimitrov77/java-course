@@ -1,0 +1,16 @@
+package Employee;
+
+public class Policeman extends Employee {
+     private String rang;
+     
+	
+	public Policeman(int work_hours,float salary){
+		super(work_hours,salary);
+		
+		
+	}
+
+	public void setRang(String rang){
+		this.rang=rang;
+	}
+}

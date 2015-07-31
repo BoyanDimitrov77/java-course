@@ -1,0 +1,36 @@
+package Stock;
+
+public abstract class Stock {
+
+	protected double price;
+	protected boolean available;
+	protected String name;
+	
+	
+
+	public Stock(double price,boolean available,String name){
+		this.price=price;
+		this.available=available;
+		this.name=name;
+		
+		setPrice(price);
+		setName(name);
+	}
+	
+
+
+	public double getPrice(){
+		return price;
+		
+	}
+	public void setPrice(double price){
+		this.price=price;
+	}
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+}

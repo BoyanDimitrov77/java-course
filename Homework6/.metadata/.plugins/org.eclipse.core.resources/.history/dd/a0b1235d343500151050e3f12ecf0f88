@@ -1,0 +1,25 @@
+package Stock;
+
+public class Fruts  extends Stock{
+private String typeFruit;
+private String fresh;
+
+public Fruits(double price,boolean available,String typeFruit,String fresh){
+	  super(price,available);
+}
+
+public String getTypeFruit(){
+	return typeFruit;
+	
+}
+public void setTypeFruit(String typeFruit){
+	this.typeFruit=typeFruit;
+}
+	
+public String getFresh(){
+	return fresh;
+}
+public void setFresh(String fresh){
+	this.fresh=fresh;
+}
+}

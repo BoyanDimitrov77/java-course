@@ -1,0 +1,29 @@
+package Employee;
+
+public class Doctor extends Employee {
+	
+	private int full_time_duty_month;
+	private int night_duty_month;
+	
+	public Doctor(int work_hours,float salary,int full_time_duty_month,int night_duty_month){
+		super(work_hours,salary);
+		
+		
+	}
+	
+	public int getFullTime(){
+		return full_time_duty_month;
+	}
+
+	public void setFullTime(int full_time_duty_month){
+		this.full_time_duty_month=full_time_duty_month;
+	}
+	
+	public int getNightDuty(){
+		return night_duty_month;
+	}
+	
+	public void set(int night_duty_month){
+		this.night_duty_month=night_duty_month;
+	}
+}

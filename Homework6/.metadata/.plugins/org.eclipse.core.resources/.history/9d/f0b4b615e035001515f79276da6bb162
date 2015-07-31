@@ -1,0 +1,38 @@
+package Stock;
+
+public class Vegetables  extends Stock{
+private String sortVegetables;
+private String gmo;
+
+private String bio;
+
+
+public Vegetables(double price,boolean available,String typeVegetables,String gmo,String bio){
+	  super(price,available);
+	  
+	  setTypeVegetables(typeVegetables);
+	  setGmo(gmo);
+	  setBio(bio);
+}
+	public String getTypeVegetables(){
+		return sortVegetables;
+	}
+	public void setTypeVegetables(String typeVegetables ){
+		this.sortVegetables=typeVegetables;
+	}
+	
+	public String getGmo() {
+		return gmo;
+	}
+	public void setGmo(String gmo) {
+		this.gmo = gmo;
+	}
+	public String getBio() {
+		return bio;
+	}
+	public void setBio(String bio) {
+		this.bio = bio;
+	}
+
+
+}

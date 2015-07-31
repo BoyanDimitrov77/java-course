@@ -1,0 +1,24 @@
+package Employee;
+
+public class Inheritance {
+
+	public static void main(String[] args) {
+		Policeman person1= new Policeman(80,2000,"commissar");
+		person1.sayRang();
+		System.out.println("Policeman's work hours:"+person1.getWork_Hours());
+		System.out.println("Policeman's salary:"+person1.getSalary());
+
+		
+		System.out.println();
+		Doctor person2=new Doctor(100,2000,12,4);
+		person2.printDuty();
+		
+		
+		System.out.println("Doctor's work hours: "+person2.getWork_Hours());
+		System.out.println("Doctor's salary "+person2.getSalary());
+
+		
+		
+	}
+
+}

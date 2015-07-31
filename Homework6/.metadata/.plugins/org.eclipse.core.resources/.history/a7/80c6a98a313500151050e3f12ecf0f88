@@ -1,0 +1,11 @@
+
+public class Stock {
+
+	protected double price;
+	protected boolean available;
+	
+	public Stock(double price,boolean available){
+		this.price=price;
+		this.available=available;
+	}
+}

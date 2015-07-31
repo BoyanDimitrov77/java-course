@@ -1,0 +1,33 @@
+package Car;
+
+public class SUV extends Car {
+      private boolean off_road=true;
+	
+      public SUV(double price){
+    	  super(price);
+    	  checkCar();
+      }
+      
+      public boolean checkCar(){
+    	  System.out.println("Is this car is suitable for off-road");
+    	  System.out.println("Y/N");
+    	  
+    	  char answer = 0;
+    	  if(answer=='Y'){
+    		  return off_road;
+    		  
+    	  }else if(answer=='N'){
+    		  System.out.println(off_road=false);
+    		 
+    	    	 
+    	  }else{
+    		  System.out.println("You enter invalid key");
+    	  }
+		return off_road;
+    		  
+    		  
+    	  
+    	  
+      }
+      
+}

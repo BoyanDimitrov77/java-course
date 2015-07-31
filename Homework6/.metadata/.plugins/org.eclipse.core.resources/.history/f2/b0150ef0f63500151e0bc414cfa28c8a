@@ -1,0 +1,11 @@
+package Convert;
+
+import java.util.Scanner;
+
+public class ConvertCelsiusToFahrenheit {
+private float celsius;
+private float fahrenheit;
+
+
+	
+}

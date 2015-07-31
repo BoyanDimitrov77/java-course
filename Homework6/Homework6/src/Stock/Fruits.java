@@ -1,0 +1,32 @@
+package Stock;
+
+public class Fruits extends Stock {
+	private String typeFruit;
+	private String taste;
+
+	public Fruits(double price, boolean available, String typeFruit, String taste, String name) {
+		super(price, available, name);
+		this.typeFruit = typeFruit;
+		this.taste = taste;
+
+		setTypeFruit(typeFruit);
+		setTaste(taste);
+	}
+
+	public String getTypeFruit() {
+		return typeFruit;
+
+	}
+
+	public void setTypeFruit(String typeFruit) {
+		this.typeFruit = typeFruit;
+	}
+
+	public String geTaste() {
+		return taste;
+	}
+
+	public void setTaste(String taste) {
+		this.taste = taste;
+	}
+}

@@ -1,0 +1,81 @@
+package Car;
+import java.util.Scanner;
+
+public class SortCarPrice {
+
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in,"UTF-8");
+		
+		
+		Car cars[]=new Car[10];
+		Automobile auto[]=new Automobile[5];
+		SUV jeep[]=new SUV[5];
+		
+		for(int i=0;i<auto.length;i++){
+			double price1=input.nextDouble();
+			auto[i]=new Automobile(price1);
+			
+		}
+		
+		for(int j=0;j<jeep.length;j++){
+			double price2=input.nextDouble();
+			jeep[j]=new SUV(price2);
+		}
+		
+		for(int k=0;k<5;k++){
+		
+				cars[k]=auto[k];
+		
+		}
+		int count =0;
+		for(int p=5;p<10;p++){
+			
+			cars[p]=jeep[count];
+			count++;
+		}
+		
+		for(Car car1:cars){
+			System.out.println(car1.price);
+		}
+		
+
+		
+		
+		
+		/*for(int i=0;i<cars.length;i++){
+			if(i<5){
+				double price1=input.nextDouble();
+				//Automobile auto=new Automobile(price1);
+				//cars[i]=price1;
+			}
+			else if(i>5){
+				double price2=input.nextDouble();
+				//SUV jeep=new SUV(price2);
+				//cars[i]=jeep;
+			}
+			
+		}
+		
+		for(Car car1:cars){
+			System.out.println(car1);
+		}*/
+		input.close();
+
+		
+	}
+	public static void SortArray(double [] array ){
+		for(int i=0;i<array.length;i++){
+			for(int j=0;j<array.length;j++){
+				if(array[j]>array[j+1]){
+				double temp=array[j];
+				array[j]=array[j+1];
+				array[j+1]=temp;
+			}
+			
+			}
+		}
+		
+	}
+	
+
+}

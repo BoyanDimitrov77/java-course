@@ -1,0 +1,27 @@
+package Stock;
+
+public class Meat extends Stock{
+   private String typeMeat;
+   private String origin;
+	
+   public Meat(double price,boolean available,String typeMeat,String origin){
+	   super(price,available);
+	   setTypeMeat(typeMeat);
+	   setOrigin(origin);
+	   
+   }
+	public String getTypeMeat(){
+		return typeMeat;
+	}
+	public void setTypeMeat(String typeMeat){
+		this.typeMeat=typeMeat;
+	}
+	
+	public String getOrigin(){
+		return origin;
+		
+	}
+	public void setOrigin(String origin){
+		this.origin=origin;
+	}
+}

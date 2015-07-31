@@ -1,0 +1,217 @@
+package Stock;
+import java.util.Scanner;
+
+public class Shop {
+private String shopName;
+private String location;
+	
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in,"UTF-8");
+		System.out.println("Enter number of product:");
+		int numAddProduct=input.nextInt();
+		Stock stocks[]=new Stock[numAddProduct];  
+		
+		
+		addProduct(stocks,numAddProduct,input);
+		
+		
+		boolean checkProduct=checkProduct(stocks,input);
+		
+		System.out.println("This product is available:"+checkProduct);
+		
+	
+		
+
+		
+input.close();
+
+
+	}
+
+	public static void addProduct(Stock[] stocks ,int numAddProduct,Scanner input){
+	
+		
+		
+		for(int i=0;i<stocks.length;i++){
+			
+			System.out.println("Enter category of product you want to input(1.Meat/2.Vegetables/3.Fruits/4.Bavarage/5.Dessert):");
+			int choice =input.nextInt();
+			
+			switch(choice){
+			case 1:{
+				System.out.println("Enter price:");
+				double price=input.nextDouble();
+				input.nextLine();
+				System.out.println("Enter type of product:");
+				String typeP=input.nextLine();
+				System.out.println("Enter name:");
+				String name=input.nextLine();
+				System.out.println("Enter origin:");
+				String origin=input.nextLine();
+				
+				Meat meats=new Meat(price,true,typeP,origin,name);
+				stocks[i]=meats;
+				
+			}break;
+			case 2:{
+				System.out.println("Enter price:");
+				double price=input.nextDouble();
+				input.nextLine();
+				System.out.println("Enter sort vegetables:");
+				String sortP=input.nextLine();
+				System.out.println("Enter name:");
+				String name=input.nextLine();
+				System.out.println("Enter Yes/No if this vegetables is GMO:");
+				String gmo=input.nextLine();
+				System.out.println("Enter Yes/No if this vegetables is BIO:");
+				String bio=input.nextLine();
+				
+			Vegetable vegetables=new Vegetable(price,true,sortP,gmo,bio,name);
+			stocks[i]=vegetables;
+			}break;
+			
+			case 3:{
+				System.out.println("Enter price:");
+				double price=input.nextDouble();
+				input.nextLine();
+				System.out.println("Enter type fruit:");
+				String typeP=input.nextLine();
+				System.out.println("Enter name:");
+				String name=input.nextLine();
+				System.out.println("Taste:");
+				String taste=input.nextLine();
+				
+				Fruits fruit=new Fruits(price,true,typeP,taste,name);
+				stocks[i]=fruit;
+				
+			}break;
+			case 4:{
+				System.out.println("Enter price:");
+				double price=input.nextDouble();
+				input.nextLine();
+				System.out.println("Enter name:");
+				String name=input.nextLine();
+				System.out.println("Enter Yes/No if this beverage is soft :");
+				String soft_drink=input.nextLine();
+				System.out.println("Enter Yes/No if this baverage is alcoholic:");
+				String alcoholic_drink=input.nextLine();
+				
+				Beverage beverages=new Beverage(price,true,soft_drink,alcoholic_drink,name);
+			     stocks[i]=beverages;
+				
+			}break;
+			case 5:{
+				System.out.println("Enter price:");
+				double price=input.nextDouble();
+				input.nextLine();
+				System.out.println("Enter name:");
+				String name=input.nextLine();
+				System.out.println("Enter Yes/No if this is fruit dessert :");
+				String fruits_dessert=input.nextLine();
+				System.out.println("Enter Yes/No if this is sweet dessert:");
+				String sweet_dessert=input.nextLine();
+				
+				Dessert desserts=new Dessert(price,true,fruits_dessert,sweet_dessert,name);
+				stocks[i]=desserts;
+				
+			}break;
+			
+			default:System.err.println("Invalid data");
+			
+			}
+			
+			/*if(category=="Meat"){
+				System.out.println("Enter price:");
+				double price=input.nextInt();
+				System.out.println("Enter type of product:");
+				String typeP=input.nextLine();
+				System.out.println("Enter origin:");
+				String origin=input.nextLine();
+				
+				Meat meats=new Meat(price,true,typeP,origin);
+				stocks[i]=meats;
+				
+			}else if(category=="Vegetables"){
+				System.out.println("Enter price:");
+				double price=input.nextInt();
+				System.out.println("Enter sort vegetables:");
+				String sortP=input.nextLine();
+				System.out.println("Enter Yes/No if this vegetables is GMO:");
+				String gmo=input.nextLine();
+				System.out.println("Enter Yes/No if this vegetables is BIO:");
+				String bio=input.nextLine();
+				
+			Vegetable vegetables=new Vegetable(price,true,sortP,gmo,bio);
+			stocks[i]=vegetables;
+				
+			}else if(category=="Fruits"){
+				System.out.println("Enter price:");
+				double price=input.nextInt();
+				System.out.println("Enter type fruit:");
+				String typeP=input.nextLine();
+				System.out.println("Taste:");
+				String taste=input.nextLine();
+				
+				Fruits fruit=new Fruits(price,true,typeP,taste);
+				stocks[i]=fruit;
+				
+				
+			}else if(category=="Bavarage"){
+				System.out.println("Enter price:");
+				double price=input.nextInt();
+				System.out.println("Enter name:");
+				String name=input.nextLine();
+				System.out.println("Enter Yes/No if this beverage is soft :");
+				String soft_drink=input.nextLine();
+				System.out.println("Enter Yes/No if this baverage is alcoholic:");
+				String alcoholic_drink=input.nextLine();
+				
+				Beverage beverages=new Beverage(price,true,soft_drink,alcoholic_drink,name);
+			     stocks[i]=beverages;
+				
+			}else if(category=="Dessert"){
+				System.out.println("Enter price:");
+				double price=input.nextInt();
+				System.out.println("Enter name:");
+				String name=input.nextLine();
+				System.out.println("Enter Yes/No if this is fruit dessert :");
+				String fruits_dessert=input.nextLine();
+				System.out.println("Enter Yes/No if this is sweet dessert:");
+				String sweet_dessert=input.nextLine();
+				
+				Dessert desserts=new Dessert(price,true,fruits_dessert,sweet_dessert,name);
+				stocks[i]=desserts;
+				
+			}else{
+				System.err. println("Enter invalid data");
+			}*/
+			
+		}
+		
+
+	}
+	
+	public static boolean checkProduct(Stock[] stocks,Scanner input){
+		
+		System.out.print("Check product-Enter price of product:");
+		double checkP=input.nextDouble();
+		System.out.println("Enter name of product:");
+		input.nextDouble();
+		String nameP=input.nextLine();
+		int count=0;
+		boolean check=true;
+		
+		for(int i =0;i<stocks.length;i++){
+		    if(stocks[i].getPrice()==checkP && stocks[i].getName()==nameP){
+		    	check=true;
+		    	count++;
+		    	
+		    }
+		    	
+		}
+		System.out.println("Number of products are :"+count);
+		return check;
+	}
+}
+
+

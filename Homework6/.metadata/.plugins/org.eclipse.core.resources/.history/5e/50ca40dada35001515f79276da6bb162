@@ -1,0 +1,17 @@
+package Stock;
+
+public class Vegetables  extends Stock{
+private String typeVegetables;
+
+public Vegetables(double price,boolean available,String typeVegetables){
+	  super(price,available);
+}
+	public String getTypeVegetables(){
+		return typeVegetables;
+	}
+	public void setTypeVegetables(String typeVegetables ){
+		this.typeVegetables=typeVegetables;
+	}
+
+
+}

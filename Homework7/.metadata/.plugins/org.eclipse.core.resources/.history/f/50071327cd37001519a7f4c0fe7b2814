@@ -1,0 +1,77 @@
+package Person;
+
+public class PrintInfo {
+
+	public static void main(String[] args) {
+		
+		Teacher teachers=new Teacher("Iva","Dobreva",5,"History");
+		System.out.println("Name:"+teachers.getFirst_name());
+		System.out.println("Last name:"+teachers.getLast_name());
+		System.out.println("Experience:"+teachers.getExperience() + " years");
+		System.out.println("Subject:"+teachers.getNameSubject());
+		
+		teachers.SayGoodDay();
+		teachers.SayGoodBye();
+		teachers.checkHomework();
+		
+		System.out.println();
+		
+		SchoolTeacher schoolTeachears=new SchoolTeacher("Nina","Draganova",10,"Math");
+		System.out.println("Name:"+schoolTeachears.getFirst_name());
+		System.out.println("Last name:"+schoolTeachears.getLast_name());
+		System.out.println("Experience:"+schoolTeachears.getExperience() + " years");
+		System.out.println("Subject:"+schoolTeachears.getNameSubject());
+		
+		schoolTeachears.doPrintClass();
+		schoolTeachears.checkHomework();
+		schoolTeachears.entertainKids();
+		
+		System.out.println();
+		
+		CollegeTeacher collegeTeachers=new CollegeTeacher("Maq","Dancheva",15,"Bio","College");
+		System.out.println("Name:"+collegeTeachers.getFirst_name());
+		System.out.println("Last name:"+collegeTeachers.getLast_name());
+		System.out.println("Experience:"+collegeTeachers.getExperience() + " years");
+		System.out.println("Subject:"+collegeTeachers.getNameSubject());
+		System.out.println("Name of college:"+collegeTeachers.getNameOfColleage());
+		
+		collegeTeachers.checkHomework();
+		
+		System.out.println();
+		Lecturer lecturers=new Lecturer("Stoqn","Petrov",10,"University");
+		System.out.println("Name:"+lecturers.getFirst_name());
+		System.out.println("Last name:"+lecturers.getLast_name());
+		System.out.println("Experience:"+lecturers.getExperience() + " years");
+		System.out.println("University:"+lecturers.getName_uni());
+		
+		lecturers.doExcercises("Monday");
+		lecturers.doExcercises("Tuesday","Friday");
+		lecturers.doExcercises("Monday", "Wednesday", "Saturday");
+		lecturers.SayGoodDay();
+		
+		System.out.println();
+		Proffesor proffesors=new Proffesor("Ivan","Ivanov",20,"University","Deegree");
+		System.out.println("Name:"+proffesors.getFirst_name());
+		System.out.println("Last name:"+proffesors.getLast_name());
+		proffesors.doPirnt();
+		System.out.println("Subject:"+proffesors.getName_uni());
+		
+		proffesors.checkHomework();
+		proffesors.conductExamination();
+		
+		System.out.println();
+		Assistant assistants=new Assistant("Dimitar","Petkanov",2,"University",true);
+		assistants.printInfo();
+		System.out.println("Experience:"+assistants.getExperience());
+		System.out.println(assistants.getName_uni());
+		
+		assistants.writeArticles();
+		assistants.checkHomework();
+		assistants.checkTest();
+		
+		System.out.println(Person.getCounter());
+		
+
+	}
+
+}

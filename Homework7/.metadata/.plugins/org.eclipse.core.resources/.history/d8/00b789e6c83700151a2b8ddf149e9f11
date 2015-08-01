@@ -1,0 +1,22 @@
+package Person;
+
+public class PrintInfo {
+
+	public static void main(String[] args) {
+		
+		Teacher teachers=new Teacher("Iva","Dobreva",5,"History");
+		System.out.println("Name:"+teachers.getFirst_name());
+		System.out.println("Last name:"+teachers.getLast_name());
+		System.out.println("Experience:"+teachers.getExperience() + "years");
+		System.out.println("Subject:"+teachers.getNameSubject());
+		
+		teachers.SayGoodDay();
+		teachers.SayGoodBye();
+		teachers.checkHomework();
+		
+		
+		
+
+	}
+
+}

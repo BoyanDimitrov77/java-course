@@ -1,0 +1,40 @@
+package Person;
+
+public class Assistant extends Lecturer implements Homework {
+
+	private boolean teaching_assistant;
+
+	public boolean isTeaching_assistant() {
+		return teaching_assistant;
+	}
+
+	public void setTeaching_assistant(boolean teaching_assistant) {
+		this.teaching_assistant = teaching_assistant;
+	}
+	
+	public Assistant(String first_name,String last_name,int experience,String name_uni){
+		super(first_name,last_name,experience,name_uni);
+		
+		
+		super.setCounter(super.getCounter() + 1);
+	}
+	
+	public void printInfo(){
+		System.out.println("Assistant's first name: "+super.getFirst_name());
+		System.out.println("Assistant's last name: "+super.getLast_name());
+		
+		if(teaching_assistant=true){
+			System.out.println("Teaching assistant:"+this.isTeaching_assistant());
+		}else
+			System.out.println("Teaching assistant:"+this.isTeaching_assistant());
+		
+	}
+	
+	public void writeArticles(){
+		System.out.println("Assistant can write articles");
+	}
+	
+	public void checkHomework(){
+		System.out.println("Asistant check more homework than lecturer");
+	}
+}

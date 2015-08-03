@@ -1,0 +1,37 @@
+package BankAccount;
+import java.util.Scanner;
+
+public class Test {
+
+	public static void main(String[] args) throws NegativeMoneyException, InvalidAccountException {
+	Scanner input=new Scanner(System.in,"UTF-8");
+
+	 
+	
+		PersonalAccount personalAccounts=new PersonalAccount("Petar",2134679845,3000);
+		System.out.println(personalAccounts.getName());
+		System.out.println(personalAccounts.getId());
+	    System.out.println(personalAccounts.getSum_bank());
+	   
+		System.out.println();
+		
+		CoorporativeAccount coorporativeAccount=new CoorporativeAccount("Ivan-ODD","BG1123445623",5000);
+		System.out.println(coorporativeAccount.getName_firm());
+		System.out.println(coorporativeAccount.getSum_bank());
+		System.out.println(coorporativeAccount.getBulstat());
+		
+		TestClass test=new TestClass();  //doesn't inherite Account class
+		test.doPirnt();
+		
+		System.out.println();
+        
+	    System.out.println("name:");
+	     String checkObj=input.nextLine();
+		Account.CheckAccount(checkObj);
+		
+	
+	
+	
+	}
+	
+}

@@ -1,0 +1,30 @@
+package BankAccount;
+
+
+
+@SuppressWarnings("serial")
+public class NegativeMoneyException extends Exception {
+ 
+	private double sum
+	
+	public NegativeMoneyException(double sum){
+		this.sum=sum;
+	}
+
+	
+	public NegativeMoneyException(){}
+    
+   /* public NegativeMoneyException(String message){
+    	super(message);
+    }*/
+
+
+	public double getSum() {
+		return sum;
+	}
+
+
+	public void setSum(double sum) {
+		this.sum = sum;
+	}
+}

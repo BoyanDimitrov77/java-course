@@ -1,0 +1,27 @@
+package BankAccount;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		PersonalAccount personalAccounts=new PersonalAccount("Petar",2134679845,3000);
+		personalAccounts.getName();
+		personalAccounts.getSum_bank();
+		
+		
+		CoorporativeAccount coorporativeAccount=new CoorporativeAccount("Ivan-ODD","BG1123445623",5000);
+		coorporativeAccount.getName_firm();
+		coorporativeAccount.getSum_bank();
+		coorporativeAccount.getBulstat();
+		
+		TestClass test=new TestClass();
+	
+		
+
+	}
+
+	
+
+	
+
+}

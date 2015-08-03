@@ -1,0 +1,20 @@
+package BankAccount;
+
+public class Account {
+
+	protected double sum_bank=0;
+	
+
+	public Account(double sum_bank){
+		this.sum_bank=sum_bank;
+	}
+	
+	public double getSum_bank() {
+		return sum_bank;
+	}
+
+	public void setSum_bank(double sum_bank) {
+		this.sum_bank = sum_bank;
+	}
+
+}

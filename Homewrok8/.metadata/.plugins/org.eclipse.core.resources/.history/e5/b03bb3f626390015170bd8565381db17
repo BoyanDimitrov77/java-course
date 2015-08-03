@@ -1,0 +1,7 @@
+package BankAccount;
+
+public class Account {
+
+	protected double sum_bank=0;
+	
+}

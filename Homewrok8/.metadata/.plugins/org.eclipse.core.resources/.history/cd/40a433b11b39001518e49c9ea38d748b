@@ -1,0 +1,42 @@
+package User;
+import java.util.Scanner;
+
+public class PrintResult {
+
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in,"UTF-8");
+		
+		User[] users=new User[3];
+		
+		try{
+			
+			for(int i=0;i<users.length;i++){
+				
+				System.out.println("Enter email:");
+				String email=input.nextLine();
+				users[i].setEmail(email);
+				input.nextLine();
+				
+				
+				System.out.println("Enter password");
+				String pass=input.nextLine();
+				users[i].setPassword(pass);
+					
+			}
+			
+			for(User info:users){
+				System.out.println(info);
+				System.out.println();
+			}
+			
+		}catch(IllegalArgumentException exception ){
+			System.out.println("Not correct input");
+		}finally{
+			System.out.println("Please input correct email and password");
+			
+		}
+		
+
+	}
+
+}

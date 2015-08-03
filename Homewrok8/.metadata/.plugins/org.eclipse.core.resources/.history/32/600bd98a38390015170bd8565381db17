@@ -1,0 +1,6 @@
+package BankAccount;
+
+public interface Check {
+
+	public void CheckInheritance(Account object);
+}

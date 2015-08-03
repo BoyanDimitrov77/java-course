@@ -1,0 +1,29 @@
+package BankAccount;
+
+public class Test {
+
+	public static void main(String[] args) throws NegativeMoneyException {
+		
+		
+		PersonalAccount personalAccounts=new PersonalAccount("Petar",2134679845,3000);
+		System.out.println(personalAccounts.getName());
+		System.out.println(personalAccounts.getSum_bank());
+		
+		
+		CoorporativeAccount coorporativeAccount=new CoorporativeAccount("Ivan-ODD","BG1123445623",5000);
+		System.out.println(coorporativeAccount.getName_firm());
+		System.out.println(coorporativeAccount.getSum_bank());
+		System.out.println(coorporativeAccount.getBulstat());
+		
+		
+		
+	
+
+	}
+	
+
+	
+
+	
+
+}

@@ -1,0 +1,22 @@
+package BankAccount;
+
+public class TestClass implements Check{
+
+	public TestClass(){
+		super();
+	}
+
+	@Override
+	public void CheckInheritance(Account object) throws InvalidAccountException {
+if(object instanceof Account){
+			
+			//PersonalAccount.class.isAssignableFrom()
+			
+			//System.out.println(this.id);
+		}else{
+			throw new InvalidAccountException("This object doens't inherite this clas");
+		}
+		
+		
+	}
+}

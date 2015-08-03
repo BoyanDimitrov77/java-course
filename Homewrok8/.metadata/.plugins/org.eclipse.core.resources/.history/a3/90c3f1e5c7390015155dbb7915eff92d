@@ -1,0 +1,61 @@
+package BankAccount;
+
+
+public class Test {
+
+	public static void main(String[] args) throws NegativeMoneyException, InvalidAccountException {
+	
+		
+	
+		
+		PersonalAccount personalAccounts=new PersonalAccount("Petar",2134679845,3000);
+		//System.out.println(personalAccounts.getName());
+		//System.out.println(personalAccounts.getSum_bank());
+		
+		
+		CoorporativeAccount coorporativeAccount=new CoorporativeAccount("Ivan-ODD","BG1123445623",5000);
+		//System.out.println(coorporativeAccount.getName_firm());
+		//System.out.println(coorporativeAccount.getSum_bank());
+		//System.out.println(coorporativeAccount.getBulstat());
+		
+		TestClass test=new TestClass();  //doesn't inherite Account class
+		
+		//personalAccounts.CheckInheritance(personalAccounts);
+		
+		//coorporativeAccount.CheckInheritance(coorporativeAccount);
+		
+		CheckAccount(coorporativeAccount);
+		CheckAccount(test);
+	
+	
+
+	}
+	
+	
+
+	public static void CheckAccount(Object object) throws InvalidAccountException{
+		
+		if(object instanceof PersonalAccount){
+			System.out.println("ID:"+((PersonalAccount) object).getId());
+		}else if(object instanceof CoorporativeAccount)
+		{
+			System.out.println("Bulstat:"+((CoorporativeAccount) object).getBulstat());
+			
+			
+		}else{
+			throw new InvalidAccountException("This object doens't inherite this class");
+		}
+		
+		
+			
+		
+	}
+
+	
+	
+
+	
+
+	
+
+}

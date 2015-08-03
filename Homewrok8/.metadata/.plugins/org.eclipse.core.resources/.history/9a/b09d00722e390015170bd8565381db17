@@ -1,0 +1,12 @@
+
+
+
+class NegativeMoneyException extends Exception {
+
+
+	public NegativeMoneyException(){}
+    
+    public NegativeMoneyException(String message){
+    	super(message);
+    }
+}

@@ -1,0 +1,48 @@
+package CheckPriority;
+import java.util.Scanner;
+public class CheckPriority {
+
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in,"UTF-8");
+		
+		String math_expression=input.nextLine();
+		
+		boolean check=checkPriority(math_expression);
+		System.out.println(check);
+
+		input.close();
+	}
+
+	
+	public static boolean checkPriority(String math_expression) {
+
+		String characteStart = "(";
+		String characterEnd = ")";
+		int flag = 0;//find scobe
+		boolean check=false;
+
+		String[] parts = math_expression.split("[0-9+\\-*/.]");
+
+		
+
+			for (String mathPart : parts) {
+	
+				
+				if(mathPart.equals(characterEnd) && flag==1){
+					flag=0;
+					check=true;
+					continue;
+				}else{
+					check=false;
+				}
+				
+				if(mathPart.equals(characteStart)){
+					flag=1;
+				}
+				
+			}
+
+			return check;
+
+	}
+}

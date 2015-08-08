@@ -1,0 +1,113 @@
+package WriteEvenOrOddLine;
+
+import javax.swing.JFileChooser;
+import java.io.File; 
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+
+public class WriteEvenOrOddLine {
+
+	public static void main(String[] args) {
+		
+		String OpenFilePath="";
+		String SaveFileEven="";
+		String SaveFileOdd="";
+		
+		
+		JFileChooser fileChooser = new JFileChooser();
+		fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+		int result = fileChooser.showOpenDialog(fileChooser);
+		if (result == JFileChooser.APPROVE_OPTION) {
+			System.out.println("Please select file which you want to read:");
+		    File selectedFile = fileChooser.getSelectedFile();
+		    OpenFilePath=selectedFile.getAbsolutePath();
+		    
+		    System.out.println("Please selecet file in which you want to save even line");
+		    File selectedFile1=fileChooser.getSelectedFile();
+		    SaveFileEven=selectedFile1.getAbsolutePath();
+		    
+		    System.out.println("Please select file in which you want to save odd line");
+		    File selectedFile2=fileChooser.getSelectedFile();
+		    SaveFileOdd=selectedFile2.getAbsolutePath();
+		   
+		    //System.out.println("Selected file: " + selectedFile.getAbsolutePath());
+		}
+
+		readFile(OpenFilePath,SaveFileEven,SaveFileOdd);
+		
+
+	}
+
+	public static void readFile(String FileOpen,String FileEven,String FileOdd){
+		try{
+			int count=1;
+			
+			FileReader readFile=new FileReader(FileOpen);
+			
+			BufferedReader br=new BufferedReader(readFile);
+			
+			while(br.ready()){
+				if(count%2==0){
+				String lineEven=br.readLine();
+				writeFile1(FileEven,lineEven);
+				}else{
+					String lineOdd=br.readLine();
+					writeFile2(FileOdd,lineOdd);
+					
+				}
+				
+				count++;
+			}
+			
+			br.close();
+		}catch(Exception e){
+			System.out.println("Read Error");
+			System.out.println(e.getMessage());
+			System.exit(0);
+			
+			
+		}
+		
+		
+	}
+	
+	public static void writeFile1(String FileEven,String lineEven){
+		try{
+			FileWriter writeFile=new FileWriter(FileEven,true);
+			
+			BufferedWriter writer=new BufferedWriter(writeFile);
+			
+			writer.write(lineEven);
+		    writer.newLine();
+			
+		    writer.close();
+			
+		}catch(Exception e){
+			System.out.println("Read Error");
+			System.out.println(e.getMessage());
+			System.exit(0);
+			
+		}
+	}
+	
+	public static void writeFile2(String FileOdd,String lineOdd){
+		try{
+			FileWriter writeFile=new FileWriter(FileOdd,true);
+			
+			BufferedWriter writer=new BufferedWriter(writeFile);
+			
+			writer.write(lineOdd);
+		    writer.newLine();
+			
+		    writer.close();
+			
+		}catch(Exception e){
+			System.out.println("Read Error");
+			System.out.println(e.getMessage());
+			System.exit(0);
+			
+		}
+	}
+}

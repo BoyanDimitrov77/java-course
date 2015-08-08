@@ -1,0 +1,33 @@
+package CheckPriority;
+import java.util.Scanner;
+public class CheckPriority {
+
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in,"UTF-8");
+		
+		String math_expression=input.nextLine();
+		
+
+	}
+
+	
+	public static boolean checkPriority(String math_expression){
+		
+		String characteStart="(";
+		String characterEnd=")";
+		int flag=0;
+		
+		String[] parts=math_expression.split("[0-9()+\\-*/.]");
+		
+		for(String mathPart:parts){
+			if(mathPart.equals(characteStart)){
+				flag=1;
+			}
+			
+			if(mathPart.equals(characterEnd)){
+				flag=2;
+			}
+		}
+		
+	}
+}

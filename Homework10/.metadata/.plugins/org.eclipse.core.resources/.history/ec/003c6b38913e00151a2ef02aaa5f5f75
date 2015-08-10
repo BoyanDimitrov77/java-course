@@ -1,0 +1,45 @@
+package UniqueWord;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.HashMap;
+public class UniqueWord {
+	
+	
+
+	public static void main(String[] args) {
+	Scanner input=new Scanner(System.in,"UTF-8");
+	
+	System.out.println("Please enter text");
+	String text=input.nextLine();
+	
+	System.out.println("Unique words");
+	printUniqueWord(text);
+	
+     input.close();
+	}
+
+	
+	public  static void printUniqueWord(String text){
+		String[] part=text.split("[ .,!]+");
+		
+		HashMap<String,Integer> countWord=new HashMap<String,Integer>();
+		
+		for(String addWord:part){
+			Integer count=countWord.get(addWord.equalsIgnoreCase(text));
+			if(count==null){
+				count=0;
+			}
+			countWord.put(addWord,count+1);
+		}
+	   Set<String> wordKey=countWord.keySet();
+	   
+	   for(String addWord:wordKey){
+		   int count=countWord.get(addWord);
+		   if(count==1){
+			   System.out.printf("%s",addWord);
+				System.out.println();
+		   }
+		   
+	   }
+	}
+}

@@ -1,0 +1,36 @@
+package CountWord;
+import java.util.Set;
+import java.util.TreeMap;
+
+public class Count {
+
+	public static void main(String[] args) {
+		String [] words={"black","yellow","blue","red","orage","car","blue","car","bike",
+				"red","green","ball","orange","dog","cat","mouse","dog","laptop","blue","ball"};
+		
+		TreeMap<String,Integer>word=new TreeMap<String,Integer>();
+         
+		for(String addWord:words){
+			Integer count=word.get(addWord);
+			if(count==null){
+				count=0;
+				
+			}
+			word.put(addWord,count+1);
+			
+		}
+		
+		Set<String> wordsKeys=word.keySet();
+		
+		for(String addWord:wordsKeys){
+			int count=word.get(addWord);
+			System.out.printf("%s-> %d times",addWord,count);
+			System.out.println();
+			
+		}
+		
+		
+
+	}
+
+}

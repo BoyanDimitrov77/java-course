@@ -1,0 +1,73 @@
+package Library;
+import java.util.TreeMap;
+import java.util.Scanner;
+public class BooksInfo {
+
+	public static void main(String[] args) {
+      Scanner input=new Scanner(System.in,"UTF-8");
+      
+      TreeMap<Integer,Book> book=new TreeMap<Integer,Book>();
+      
+      System.out.println("Enter number of book");
+      int number=input.nextInt();
+      input.nextLine();
+      
+      addBook(book,input, number);
+      removeBook(book,input);
+		
+		input.close();
+	}
+
+	
+	public static void addBook(TreeMap<Integer,Book> book,Scanner input, int number){
+		
+		//TreeMap<Integer,Book> book=new TreeMap<Integer,Book>();
+		
+		System.out.println("Enter name of library:");
+		String name=input.nextLine();
+		
+		System.out.println("Enter addres");
+		String adress=input.nextLine();
+		
+		System.out.println("Enter collection");
+		String collection=input.nextLine();
+		
+		
+		for(int i=1;i<=number;i++){
+			System.out.println("Enter name of book:");
+			String nameBook=input.nextLine();
+			
+			System.out.println("Enter author");
+			String author=input.nextLine();
+			
+			System.out.println("Pages");
+			int pages=input.nextInt();
+			input.nextLine();
+			
+			
+			Book bookNew=new Book(name,adress,collection,nameBook,author,pages);
+			book.put(i, bookNew);
+		}
+		
+		
+		System.out.println(book);
+		
+		
+	}
+	
+	public static void removeBook(TreeMap<Integer,Book> book,Scanner input){
+		
+		System.out.println("Enter number of book you want to remove:");
+		Integer removeKey=input.nextInt();
+		
+		
+		book.remove(removeKey);
+		
+		if(book.isEmpty()){
+			System.out.println("Library is empty");
+		}else
+		System.out.println(book);
+		
+	}
+	
+}

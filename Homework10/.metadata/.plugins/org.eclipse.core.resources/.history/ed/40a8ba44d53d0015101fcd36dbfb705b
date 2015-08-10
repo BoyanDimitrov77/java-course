@@ -1,0 +1,92 @@
+package Students;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class Student {
+
+	private String firstName;
+	private String lastName;
+	private String facultyNum;
+	private HashMap<String,Double> student=new HashMap<String,Double>();
+	
+	public Student(String firstName,String lastName,String facultyNum ){
+		this.firstName=firstName;
+		this.lastName=lastName;
+		this.facultyNum=facultyNum;
+		
+	}
+	
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public String getFacultyNum() {
+		return facultyNum;
+	}
+	public void setFacultyNum(String facultyNum) {
+		this.facultyNum = facultyNum;
+	}
+	
+	public  void addSubjectMark(){
+		Scanner input=new Scanner(System.in,"UTF-8");
+		
+		System.out.println("Enter how many subject you want to input");
+		int count=input.nextInt();
+		input.nextLine();
+		
+		
+		for(int i=0;i<count;i++){
+			System.out.println("Enter subject:");
+			String subject=input.nextLine();
+			
+			System.out.println("Enter mark:");
+			double mark=input.nextDouble();
+			input.nextLine();
+			
+			this.student.put(subject,mark);
+			
+		}
+		
+		System.out.println(student);
+		
+		/*for(Map.Entry<String,Double>studetnsMark:student.entrySet()){
+			System.out.printf("%s %f",studetnsMark.getKey(),studetnsMark.getValue());
+			System.out.println();
+		}
+		*/
+		input.close();
+		
+	}
+	
+	
+	public String toString(){
+		return String.format("%s %s %s" ,this.firstName,this.lastName,this.facultyNum );
+	}
+
+	public static void main(String[] args){
+		
+	       Student student=new Student("Ivan","Petrov","1234235433");
+	       System.out.println(student);
+	       System.out.println();
+	       
+	       student.addSubjectMark();
+	       
+	       
+		
+	}
+	@Override
+	public int hashCode() {
+		return this.student.hashCode();
+	}
+		
+	
+}

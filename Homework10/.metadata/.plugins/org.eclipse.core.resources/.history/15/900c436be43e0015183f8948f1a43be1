@@ -1,0 +1,127 @@
+package Students;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Scanner;
+
+public class Student {
+
+	private String firstName;
+	private String lastName;
+	private String facultyNum;
+	private HashMap<String,List<Double>> student=new HashMap<String,List<Double>>();
+	
+	public Student(String firstName,String lastName,String facultyNum ){
+		this.firstName=firstName;
+		this.lastName=lastName;
+		this.facultyNum=facultyNum;
+		
+	}
+	
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public String getFacultyNum() {
+		return facultyNum;
+	}
+	public void setFacultyNum(String facultyNum) {
+		this.facultyNum = facultyNum;
+	}
+	
+	public  void addSubjectMark(Scanner input){
+		
+		
+		System.out.println("Enter how many subject you want to input");
+		int count=input.nextInt();
+		input.nextLine();
+		
+		 ArrayList<Double> list = new ArrayList<Double>();
+		for(int i=0;i<count;i++){
+			System.out.println("Enter subject:");
+			String subject=input.nextLine();
+			
+			System.out.println("Enter how many mark you want to input");
+			int countMark=input.nextInt();
+			for(int k=0;k<countMark;k++){
+				System.out.println("Enter mark:");
+				double mark=input.nextDouble();
+				input.nextLine();
+				list.add(mark);
+				
+				
+			}
+				
+			student.put(subject, list);
+			
+			
+		}
+
+		
+		System.out.println(student);
+		
+		// System.out.println("Enter subject you want to calculate average mark of student");
+	   //    String subjectMark=input.nextLine();
+	      
+		
+		//double averageMark=calculateAvarageMark(subjectMark,list);
+	//	System.out.println(averageMark);
+	
+	}
+	
+	public  double calculateAvarageMark(String subject,ArrayList<Double> list){
+		double sum=0;
+		Object[] mark=list.toArray();
+		
+		for(int i=0;i<student.size();i++){
+			if(student.containsKey(subject)){
+				for(int k=0;k<mark.length;k++){
+					sum+=(double)mark[k];
+					
+				}
+			}
+			
+		}
+		
+		return sum/mark.length;
+	}
+	
+	
+	public String toString(){
+		return String.format("%s %s %s" ,this.firstName,this.lastName,this.facultyNum );
+	}
+
+	public static void main(String[] args){
+		Scanner input=new Scanner(System.in,"UTF-8");
+	       Student student=new Student("Ivan","Petrov","1234235433");
+	       System.out.println(student);
+	       System.out.println();
+	       
+	      
+	       
+	       
+	       student.addSubjectMark(input);
+	       
+	     //  double averageMark=calculateAvarageMark(subject);
+	       
+	       input.close();
+		
+	}
+	@Override
+	public int hashCode() {
+		return this.student.hashCode();
+	}
+		
+	
+	
+	
+}

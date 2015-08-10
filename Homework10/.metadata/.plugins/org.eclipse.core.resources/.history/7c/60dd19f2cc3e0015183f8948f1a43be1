@@ -1,0 +1,89 @@
+package Cards;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.HashMap;
+import java.util.Set;
+
+public class CheckCards {
+
+	public static  void main(String[] args) {
+		String [] cardItem= new String[5];
+		
+		cardItem[0]="J";
+		cardItem[1]="J";
+		cardItem[2]="6";
+		cardItem[3]="7";
+		cardItem[4]="10";
+		
+		HashMap<String,Integer> cards=new HashMap<String,Integer>();
+		
+		for(String card:cardItem){
+		Integer count=cards.get(card);
+		if(count==null){
+			count=0;
+		
+		}
+			cards.put(card, count+1);
+			
+		Set<String> cardKey=cards.keySet();
+		
+		for(String card1:cardKey){
+			int counter=cards.get(card1);
+			if(counter==2){
+			
+				System.out.println("Pair");
+			}
+			if(counter==3){
+			
+				System.out.println("Set");
+			}
+			
+			if(counter==4){
+		
+				System.out.println("Four of a kind ");
+			}
+			
+			}
+			
+		}
+		
+		
+		
+		
+		/*ArrayList<String> cards=new ArrayList<String>();
+		
+		cards.add("J");
+		cards.add("J");
+		cards.add("2");
+		cards.add("J");
+		cards.add("7");
+		
+		Collections.sort(cards);*/
+		
+		/*for(String cards1: cards){
+			System.out.println(cards1);
+		}*/
+		//CheckHand(cards);
+
+//	}
+	
+	/*public static void CheckHand(ArrayList<String> cards){
+		
+		if(cards.get(0)==cards.get(1)|| cards.get(1)==cards.get(2)||cards.get(2)==cards.get(3)||cards.get(3)==cards.get(4)){
+			System.out.println("You have pair");
+			
+		}else if(cards.get(0)==cards.get(1)&& cards.get(1)==cards.get(2)||cards.get(1)==cards.get(2)&&cards.get(2)==cards.get(3)||
+				cards.get(2)==cards.get(3)&& cards.get(3)==cards.get(4)	){
+			System.out.println("You have three of kind");
+		}else if(cards.get(0)==cards.get(1)&& cards.get(1)==cards.get(2)&&cards.get(2)==cards.get(3)||
+				cards.get(1)==cards.get(2)&& cards.get(2)==cards.get(3)&&cards.get(3)==cards.get(4)){
+			System.out.println("You have set");
+		}*/
+	//}
+	
+		
+}	
+
+}

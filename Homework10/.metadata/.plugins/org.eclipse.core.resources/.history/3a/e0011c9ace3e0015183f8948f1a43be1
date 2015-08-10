@@ -1,0 +1,62 @@
+package Cards;
+import java.util.HashMap;
+import java.util.Set;
+
+public class Cards {
+
+	public static  void main(String[] args) {
+		String [] cardChoosen= new String[5];
+		
+		cardChoosen[0]="J";
+		cardChoosen[1]="J";
+		cardChoosen[2]="J";
+		cardChoosen[3]="J";
+		cardChoosen[4]="10";
+		
+		
+		
+		
+	
+}	
+	
+	public static void CheckCard(String[]cardChoosen){
+		
+HashMap<String,Integer> cards=new HashMap<String,Integer>();
+		
+		for(String card:cardChoosen){
+		Integer count=cards.get(card);
+		if(count==null){
+			count=0;
+		
+		}
+			cards.put(card, count+1);
+		
+		}
+		
+		Set<String> cardKey=cards.keySet();
+		
+		int counter=0;
+		for(String card1:cardKey){
+	      counter=cards.get(card1);
+			
+	      if(counter==2){
+				
+				System.out.println("Pair");
+			}
+			if(counter==3){
+			
+				System.out.println("Set");
+			}
+			
+			if(counter==4){
+		
+				System.out.println("Four of a kind ");
+			}
+	      
+	      
+			}
+		
+		
+	}
+
+}

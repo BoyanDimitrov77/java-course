@@ -1,0 +1,66 @@
+package Cards;
+import java.util.ArrayList;
+import java.util.Random;
+import Cards.Card.Paint;
+
+public class CheckCard {
+
+	
+
+	public static void main(String[] args) {
+		ArrayList<Card> cards=new ArrayList<Card>();
+         cards.add(new Card("J",Paint.CLUB));
+         cards.add(new Card("J",Paint.DIAMOND));
+         cards.add(new Card("2",Paint.CLUB));
+         cards.add(new Card("7",Paint.SPADE));
+         cards.add(new Card("10",Paint.HEART));
+         
+       //  System.out.println(cards);
+		
+         doSingleSuffler(cards);
+         printResult(cards);
+           
+	}
+
+	public static void doSingleSuffler(ArrayList<Card> cards){
+		Random rand=new Random();
+		for(int i=0;i<cards.size();i++){
+			int index=1+rand.nextInt(cards.size()-1);
+			Card firstCard=cards.get(0);
+			Card randomCard=cards.get(index);
+			
+			cards.set(0, randomCard);
+			cards.set(index,firstCard);
+			
+		}
+	}				
+		public static void printResult(ArrayList<Card> cards) {
+			int count=0;
+			Card temp=cards.get(0);
+			
+			String[] checkCard={"2","3","4","5","6","7","8","9","10","J","Q","K","A"};
+			for (int i=0;i<cards.size();i++) {
+			if(cards.contains(checkCard)){
+				count++;
+			}
+				if(count>=2){
+					temp=cards.get(i);
+				}
+			
+			}
+			
+			if(count==2){
+				System.out.println(temp);
+				System.out.println("Pair");
+			}
+			if(count==3){
+				System.out.println(temp);
+				System.out.println("Set");
+			}
+			
+			if(count==4){
+				System.out.println(temp);
+				System.out.println("Four of a kind ");
+			}
+		}
+}

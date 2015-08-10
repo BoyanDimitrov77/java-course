@@ -1,0 +1,66 @@
+package Cards;
+
+import java.util.ArrayList;
+
+public class CheckCards {
+
+	public static void main(String[] args) {
+		ArrayList<Card> cards=new ArrayList<Card>();
+		
+		cards.add(new Card("J"));
+		cards.add(new Card("J"));
+		cards.add(new Card("2"));
+		cards.add(new Card("5"));
+		cards.add(new Card("7"));
+		
+		
+
+	}
+	
+	public void CheckHand(ArrayList<Card> cards){
+		int count=0;
+		Card temp=cards.get(0);
+		
+		String [] checkCard={"2","3","4","5","6","7","8","9","10","J","Q","K","A"};
+		for (int i=0;i<cards.size();i++) {
+			
+			
+			
+			for(int k=0;k<13;k++){
+				if(checkCard[k].equals(cards.get(i))){
+					temp=cards.get(i);
+					if(cards.get(i)==temp){
+						count++;
+					}
+					//count++;
+					
+					
+				}
+				
+			}
+		
+			/*if(count>=2){
+				temp=cards.get(i);
+			}
+		*/
+		}
+		
+		if(count==2){
+			System.out.println(temp);
+			System.out.println("Pair");
+		}
+		if(count==3){
+			System.out.println(temp);
+			System.out.println("Set");
+		}
+		
+		if(count==4){
+			System.out.println(temp);
+			System.out.println("Four of a kind ");
+		}
+	}
+	
+		
+	
+
+}

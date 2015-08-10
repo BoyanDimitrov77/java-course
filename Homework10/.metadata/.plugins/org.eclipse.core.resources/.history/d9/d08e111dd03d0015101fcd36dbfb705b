@@ -1,0 +1,31 @@
+package Students;
+import java.util.HashMap;
+
+public class Students {
+
+	private String firstName;
+	private String lastName;
+	private String facultyNum;
+	private HashMap<String,Double> student=new HashMap<String,Double>();
+	
+	public Students
+	
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public String getFacultyNum() {
+		return facultyNum;
+	}
+	public void setFacultyNum(String facultyNum) {
+		this.facultyNum = facultyNum;
+	}
+}

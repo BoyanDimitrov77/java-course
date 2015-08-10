@@ -1,0 +1,26 @@
+package Cards;
+
+import java.util.ArrayList;
+
+public class CheckCards {
+
+	public static void main(String[] args) {
+		ArrayList<Card> cards=new ArrayList<Card>();
+		
+		cards.add(new Card("J"));
+		cards.add(new Card("J"));
+		cards.add(new Card("2"));
+		cards.add(new Card("5"));
+		cards.add(new Card("7"));
+		
+		
+
+	}
+	
+	public void CheckHand(ArrayList<Card> cards){
+		
+	
+		
+	}
+
+}

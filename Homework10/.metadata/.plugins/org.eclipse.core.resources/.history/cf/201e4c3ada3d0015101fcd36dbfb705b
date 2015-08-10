@@ -1,0 +1,10 @@
+import java.util.TreeMap;
+
+public class CountWord {
+
+	public static void main(String[] args) {
+		ThreeMap<String,Integer> word= new Thread<String,Integer>();
+
+	}
+
+}

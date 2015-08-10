@@ -1,0 +1,17 @@
+package Cards;
+import java.util.ArrayList;
+
+import Cards.Card.Paint;
+
+public class CheckCard {
+
+	public static void main(String[] args) {
+		ArrayList<Card> cards=new ArrayList<Card>();
+         cards.add(new Card("J",Paint.CLUB));
+         
+         System.out.println();
+		
+           
+	}
+
+}

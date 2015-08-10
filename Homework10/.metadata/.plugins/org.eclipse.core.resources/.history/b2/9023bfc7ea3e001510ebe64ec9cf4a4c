@@ -1,0 +1,66 @@
+package Company;
+import java.util.ArrayList;
+
+public class Info {
+
+	public static void main(String[] args) {
+		
+		
+		Company company1=new Company("Company1",3000);
+		Company company2=new Company ("Company2",2000);
+		Company company3=new Company("Company3",4000);
+		
+		
+		ArrayList<Company> list=new ArrayList<Company>();
+		
+		list.add(company1);
+		list.add(company2);
+		list.add(company3);
+		Company temp=list.get(0);
+		
+		int max=Integer.MIN_VALUE;
+		for(int i=0;i<list.size();i++){
+		
+			if(list.get(i).getCount()>max){
+				max=list.get(i).getCount();
+				temp=list.get(i);
+			}
+			
+			
+			
+		}
+        
+		list.remove(temp);
+	
+		System.out.println(list);
+		
+		
+		Company company4=new Company("Company312312",5000);
+		Company company5=new Company("Company3312312",6000);
+		
+		list.add(company4);
+		list.add(company5);
+		
+		Company company6=new Company("Company6",4000);
+		
+		int length=0;
+		int temp2=0;
+		//Company temp1=list.get(0);
+		for(int i=0;i<list.size();i++){
+			if(list.get(i).getName().length()<length){
+				length=list.get(i).getName().length();
+				temp=list.get(i);
+				temp2=i;
+			}
+			
+			//list.set(list.indexOf(temp1), company6);
+			list.set(temp2, company6);
+		}
+		System.out.println(list);
+	}
+		
+		
+	}
+
+
+

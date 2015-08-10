@@ -1,0 +1,41 @@
+package Town;
+
+public class Town {
+  
+private String nameTown;
+   private String contry;
+   private int population;
+   
+   public Town(String nameTown,String contry,int population){
+	   this.nameTown=nameTown;
+	   this.contry=contry;
+	   this.population=population;
+	   
+   }
+   
+   public String getNameTown() {
+		return nameTown;
+	}
+
+	public void setNameTown(String nameTown) {
+		this.nameTown = nameTown;
+	}
+
+	public String getContry() {
+		return contry;
+	}
+	
+	public void setContry(String contry) {
+		this.contry = contry;
+	}
+	
+	public int getPopulation() {
+		return population;
+	}
+
+	public void setPopulation(int population) {
+		this.population = population;
+	}
+
+
+}

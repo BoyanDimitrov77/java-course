@@ -1,0 +1,29 @@
+package Town;
+import java.util.HashSet;
+
+public class SetHashSet {
+
+	public static void main(String[] args) {
+	Town town1=new Town("Smolyan","Bulgaria",121572);
+	Town town2=new Town("Plovdiv","Bulgaria",338657);
+	Town town3=new Town("Sofia","Bulgaria",1211000);
+	Town town4=new Town("Plovdiv","Bulgaria",338657);
+	Town town5=new Town("Varna","Bulgaria",330000);
+	
+	HashSet<Town> town=new HashSet<Town>();
+	
+	town.add(town1);
+	town.add(town2);
+	town.add(town3);
+	town.add(town4);
+	town.add(town5);
+	
+	System.out.println(town);
+	
+	town.remove(town5);
+	
+	System.out.println(town);
+
+	}
+
+}

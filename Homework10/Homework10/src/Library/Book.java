@@ -1,13 +1,17 @@
 package Library;
 
-public class Book  extends Library{
+public class Book {
 	
 	private String nameBook;
 	private String author;
 	private int pages;
 	
-	public Book(String name,String adress,String collection,String nameBook,String author,int pages){
-		super(name,adress,collection);
+	public Book(){
+		super();
+	}
+	
+	public Book(String nameBook,String author,int pages){
+		
 		this.nameBook=nameBook;
 		this.author=author;
 		this.pages=pages;
@@ -34,24 +38,36 @@ public class Book  extends Library{
 	
 	@Override
 	public int hashCode(){
-		return (super.getName() + super.getAddres() +super.getCollection() +this.nameBook +this.author+this.pages).hashCode();
+		return (this.nameBook +this.author+this.pages).hashCode();
 	}
 
-   public boolean equals(Object obj){
-	   if(obj==null){
-		   return false;
-	   }
-	   if(!(obj instanceof Object)){
-		   return false;
-	   }
-	   
-	   Book book=(Book) obj;
-	   return this.hashCode()==book.hashCode();
-	   
-   }
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Book other = (Book) obj;
+		if (author == null) {
+			if (other.author != null)
+				return false;
+		} else if (!author.equals(other.author))
+			return false;
+		if (nameBook == null) {
+			if (other.nameBook != null)
+				return false;
+		} else if (!nameBook.equals(other.nameBook))
+			return false;
+		if (pages != other.pages)
+			return false;
+		return true;
+	}
 	
 	public String toString(){
-		return String.format("%s| %s| %s| %s| %s| %d",super.getName(),super.getAddres(),super.getCollection(),this.nameBook,this.author,this.pages);
+		return String.format(" %s| %s| %d",this.nameBook,this.author,this.pages);
 	
 		
 	}

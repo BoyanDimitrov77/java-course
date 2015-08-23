@@ -1,0 +1,42 @@
+package SortWordInSentece;
+import java.util.Scanner;
+public class SortWords {
+
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in,"UTF-8");
+		
+		System.out.println("Enter text");
+		String text=input.nextLine();
+		
+	
+		String []part=text.split("[ .,!?]+");
+
+		sortWord(part);
+		
+		for(String word:part){
+			System.out.println(word);
+		}
+		input.close();
+	}
+
+	public static void sortWord(String[]part){
+		
+		String temp;
+		for(int i =0;i<part.length;i++){
+			temp=part[i];
+			for(int j=0;j<part.length;j++){
+				
+				if(i==j){
+					continue;
+				}
+				int check=temp.compareTo(part[j]);
+				if(check<0){
+					temp=part[i];
+					part[i]=part[j];
+					part[j]=temp;
+				}
+			}
+		}
+		
+	}
+}

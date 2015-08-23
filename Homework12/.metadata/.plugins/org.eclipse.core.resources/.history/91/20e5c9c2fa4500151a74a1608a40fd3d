@@ -1,0 +1,12 @@
+package DesignPatterns;
+
+public abstract class Device {
+     protected String model;
+     protected String brand;
+     
+     public void printInfo(){
+    	 System.out.println(this.model);
+    	 System.out.println(this.brand);
+     }
+	
+}

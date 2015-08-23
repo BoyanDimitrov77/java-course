@@ -1,0 +1,98 @@
+package OrderNumbers;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+
+public class OrderEvenOrOddNumber {
+
+	public static void main(String[] args) {
+		Integer [] array={-2,1,0,1077,56,5,9,1000,111};
+		
+		long startTime=System.currentTimeMillis();
+		orderNumbers(array);
+         long endTime=System.currentTimeMillis();
+         long totalTime=endTime-startTime;
+         float second=(float)totalTime/1000;
+         System.out.println();
+         System.out.println("Estimate time is "+second);
+	}
+
+	
+	public static void orderNumbers(Integer[]array){
+		int countEven=0;
+		int countOdd=0;
+		
+		for(int i=0;i<array.length;i++){
+			if(array[i]%2==0){
+				countEven++;
+			}else{
+				countOdd++;
+			}
+		}
+		
+		Integer[] evenArray=new Integer[countEven];
+		Integer[] oddArray=new Integer[countOdd];
+		
+		int even=0;
+		int odd=0;
+		for(int i =0;i<array.length;i++){
+			if(array[i]%2==0){
+				evenArray[even]=array[i];
+				even++;
+			}else{
+				oddArray[odd]=array[i];
+				odd++;
+			}
+			
+		}
+		
+		Arrays.sort(evenArray);
+		Arrays.sort(oddArray, Collections.reverseOrder());
+		
+        System.out.println("Even array:");
+		for(int number:evenArray){
+			System.out.print(" "+number);
+		}
+		System.out.println();
+		  System.out.println("Odd array:");
+		for(int number:oddArray){
+			System.out.print(" "+number);
+		}
+	}
+	
+	/*public static void orderNumbers(Integer[]array ){
+		ArrayList<Integer>listEven=new ArrayList<Integer>();
+		ArrayList<Integer>listOdd=new ArrayList<Integer>();
+		
+		for(int i=0;i<array.length;i++){
+			if(array[i]%2==0){
+				listEven.add(array[i]);
+			}else{
+				listOdd.add(array[i]);
+			}
+		}
+		
+		Integer []evenArray=listEven.toArray(new Integer[listEven.size()]);
+		Integer []oddArray=listOdd.toArray(new Integer[listOdd.size()]);
+		
+		Collections.sort(listEven);
+		Collections.reverse(listOdd);
+		
+	  for(int i=0;i<listEven.size();i++){
+		  evenArray[i]=listEven.get(i);
+	  }
+	  for(int i=0;i<listOdd.size();i++){
+		  oddArray[i]=listOdd.get(i);
+	  }
+	  
+	  for(int number:evenArray){
+		  System.out.print(" "+number);
+	  }
+	  
+	  System.out.println();
+	  for(int number:oddArray){
+		  System.out.print(" "+number);
+	  }
+	}*/
+}

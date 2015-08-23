@@ -1,0 +1,74 @@
+package QuickSort;
+
+
+
+public class QuickSort {
+
+	public static void main(String[] args) {
+		int [] array={5,8,90,90,700,76,1000,800};
+		int low=0;
+		int high=array.length-1;
+		
+		long startTime=System.currentTimeMillis();
+		
+		
+		System.out.println("Sorted array");
+		quickSort(array,low,high);
+		long endTime=System.currentTimeMillis();
+		long totalTime=endTime-startTime;
+		float second=(float)totalTime/1000;
+		
+		for(int number:array){
+			System.out.print(" "+number);
+		}
+		System.out.println();
+		
+		System.out.println("Estimate time is :"+second);
+
+	}
+
+	public static void quickSort(int[] array,int low,int high){
+		if(array.length<=1 || array==null ){
+			return;
+		}
+		
+		if(low>=high){
+			return;
+		}
+		
+		int middle=low+(high-low)/2;
+		int pilot=array[middle];
+		
+		int i=low;
+		int j=high;
+	
+		while(i<=j){
+			
+			while(array[i]<pilot){
+				i++;
+			}
+			
+			while(array[j]>pilot){
+				j--;
+			}
+			
+			if(i<=j){
+				int temp=array[i];
+				array[i]=array[j];
+				array[j]=temp;
+				
+				 i++;
+	             j--;
+			}
+		}
+		
+		
+		if(low<j){
+			quickSort(array,low,j);
+		}
+		if(high>i){
+			quickSort(array,i,high);
+		}
+	}
+
+}

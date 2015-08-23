@@ -1,0 +1,14 @@
+package SortWordInSentece;
+import java.util.Scanner;
+public class SortWords {
+
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in,"UTF-8");
+		String tex=input.nextLine();
+		
+		String[] part=text.
+
+	}
+
+	
+}

@@ -1,0 +1,50 @@
+package QuickSort;
+
+import java.util.ArrayList;
+
+public class QuickSort {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public static void quickSort(int[] array,int i,int j){
+		if(array.length<=1 || array==null ){
+			return;
+		}
+		
+		if(i>=j){
+			return;
+		}
+		
+		int middle=i+(j-i)/2;
+		int pilot=array[middle];
+		
+		
+		int i=low;
+		int j=high;
+		
+		while(i<=j){
+			
+			while(array[i]<pilot){
+				i--;
+			}
+			
+			while(array[j]>pilot){
+				j++;
+			}
+			
+			if(i<=j){
+				int temp=array[i];
+				array[i]=array[j];
+				array[j]=temp;
+			}
+		}
+		
+		
+		if()
+		
+	}
+
+}

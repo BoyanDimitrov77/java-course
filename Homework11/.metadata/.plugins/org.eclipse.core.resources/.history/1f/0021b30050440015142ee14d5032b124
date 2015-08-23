@@ -1,0 +1,273 @@
+package Graph;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.Map.Entry;
+import java.util.Stack;
+
+public class Graph {
+    
+	private  int vertice[][];
+	private Stack<Integer> myStack=new Stack<Integer>();
+	boolean findPath=false;
+	
+	
+
+	public Graph(int vertice[][]){
+		this.vertice=vertice;
+	}
+	
+	public void AddEdge(int start,int end){
+		vertice[start][end]=1;
+		
+	}
+	
+	public void removeEdge(int start,int end){
+		vertice[start][end]=0;
+	}
+	
+	public boolean hasEdge(int start,int end){
+		return vertice[start][end]==1;
+		
+	}
+	public boolean isFindPath() {
+		return findPath;
+	}
+
+	public void setFindPath(boolean findPath) {
+		this.findPath = findPath;
+	}
+	
+	public  void findPathBetweenVertice(ArrayList<Integer>[]list,int start,int end){
+		
+		if(start==end){
+			printNodesInStack(myStack);
+			System.out.println(end);
+			System.out.println();
+			setFindPath(true);
+			return;
+		}
+		
+		
+		if(!myStack.contains(start)){
+			myStack.push(start);
+			if(list[start]!=null){
+				for(int i:list[start]){
+					if(!myStack.contains(i)){
+						findPathBetweenVertice(list,i,end);
+					}
+				}
+				myStack.pop();
+			}
+		}
+	}
+	
+	/*public void printNode(Stack<Integer> stack){
+		while(!stack.isEmpty()){
+			int nodes=stack.;
+			System.out.printf(" "+nodes );
+		}*/
+		
+	private static void printNodesInStack(Stack<Integer> myStack){
+		ListIterator<Integer> itr=myStack.listIterator();
+		while(itr.hasNext()){
+			System.out.print(itr.next()+",");
+		}
+	
+	
+	}
+	
+	public ArrayList<Integer>[] trasnferVerticeInList(){
+		@SuppressWarnings("unchecked")
+		ArrayList<Integer>[] list=new ArrayList[6];
+		
+		for(int i=0;i<vertice[0].length;i++){
+			list[i]=new ArrayList<Integer>();
+			for(int j=0;j<vertice.length;j++){
+				
+				if(vertice[i][j]==1){
+					
+					
+					list[i].add(j);
+					
+				}
+				
+			}
+			
+		}
+		return list;
+	}
+	
+	public boolean find(){
+		return findPath;
+	}
+	/*public List<Integer> getSuccessors(int start,int end) {
+		List<Integer> successors = new LinkedList<Integer>();
+		for (int j = 0; j < vertice[start].length; j++) {
+		if (vertice[start][j] == 1) {
+			successors.add(j);
+			if((vertice[j][end]==1 )|| (vertice[j+1][end]==1)){
+				System.out.println("Find path");
+				
+			}else{
+				System.out.println("No path");
+			}
+		
+					
+		}
+		
+		}
+		return successors;
+	}*/
+	
+	private HashMap<Integer,List<Integer>>set=new HashMap<Integer,List<Integer>>();	
+	
+	/*public void findPath(int start,int end){
+		
+		for(int i=0;i<vertice[0].length;i++){
+			List<Integer>list=new LinkedList<Integer>();
+			for(int j=0;j<vertice.length;j++){
+				
+				if(vertice[i][j]==1){
+					
+					list.add(j);
+					
+				}
+				
+			}
+			
+			set.put(i, list);
+		}
+		//Print HashMap
+		int flag=0;
+		
+		for (Entry<Integer, List<Integer>> ee : set.entrySet()) {
+		    int key = ee.getKey();
+		    List<Integer> values = ee.getValue();
+		    
+		    System.out.println(key+"--->"+values);
+		    
+		    
+		    
+		    for(int i=0;i<values.size();i++){
+		     int temp=values.get(i);
+		    }
+		    
+		    
+		    
+		    */
+		    
+		    
+		    /*if(key==start){
+		    	int temp=0;
+		    	for(int number:values){
+		    		if(number==end){
+		    			System.out.println("Find path");
+		    			break;
+		    		}else{
+		    			temp=number;
+		    			if(temp==end){
+		    				System.out.println("Find path");
+		    				break;
+		    			}
+		    		}
+		    	}
+		    	
+		    }*/
+		    
+		    
+		    
+		   /* 
+		    if(values.contains(start)){
+		    	flag=1;
+		    	if(values.contains(end)){
+		    		flag=2;
+		    		//System.out.println("Find path");
+		    	}else{
+		    		continue;
+		    	}
+	    	}
+		    
+		    if(values.contains(end)&&flag==1){
+		    	flag=2;
+		    	//System.out.println("Find path");
+		    break;
+		    }
+		    
+		
+		}
+		  if(flag==2){
+		    	System.out.println("Find path");
+		    }else{
+		    	System.out.println("There is no path");
+		    }
+		*/
+	//}
+	
+	
+	
+	
+	//private char[]path=new char[vertice[0].length*vertice.length];
+	//private int position=0;
+	
+	/*public  void hasPath(int start,int end){
+		
+		
+		if((start<0||end<0)||(start>=vertice.length||end>=vertice[0].length)){
+			return;
+		}
+		
+		path[position]=direction;
+		position++;
+		
+		if(vertice[start][end]==1){
+			System.out.println("Found path");
+		}
+		if(vertice[start][end]==0){
+			return;
+		}
+		//visited
+		vertice[start][end]=7;
+		
+		hasPath(start,end-1);//search left
+		hasPath(start-1,end);//search up;
+		hasPath(start,end+1);//search right
+		hasPath(start+1,end);//search down
+		
+		//free
+		vertice[start][end]=8;
+		
+		
+		
+	}
+	*/
+		
+	
+	
+/*public boolean hasPath(int start,int end){
+	boolean check=false;
+	ArrayList<Integer> list=new ArrayList<Integer>();
+		for(int i=0;i<start;i++){
+			for( int j=0;j<end;j++){
+				if(vertice[i][j]==1){
+					list.add(1);
+				}else
+					list.add(0);
+				
+			}
+		}
+		
+		for(int number:list){
+			if(list.contains(1)){
+				check=true;
+				continue;
+			}else
+				check=false;
+		}
+		return check;
+	}*/
+	}
+

@@ -1,0 +1,16 @@
+package Threads;
+
+public class Test {
+
+	public static void main(String[] args) {
+		FirstThread t1=new FirstThread();
+		SecondThread t2=new SecondThread();
+		ThirdThread t3=new ThirdThread();
+		
+		t1.run();
+		t2.run();
+		t3.run();
+
+	}
+
+}

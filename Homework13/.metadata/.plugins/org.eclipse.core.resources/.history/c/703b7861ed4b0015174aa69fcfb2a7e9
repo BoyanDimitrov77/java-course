@@ -1,0 +1,10 @@
+package SevenThreads;
+
+public class SevenThreads {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

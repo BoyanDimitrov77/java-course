@@ -1,0 +1,58 @@
+package InterThread;
+
+class FirtThread extends Thread{
+	
+	public void run(){
+		for(int i=0;i<50000;i++){
+			if(i==25000){
+				try{
+					wait();
+				}catch(Exception e){
+					System.out.println(e);
+					e.printStackTrace();
+				}
+			}else{
+				System.out.println(i);
+			}
+			
+			
+		}
+	}
+	
+}
+
+class SecondThread extends Thread{
+	
+	public void run(){
+		
+		for(int i=0;i<20;i++){
+			
+			try{
+				Thread.sleep(500);
+			}catch(InterruptedException e){
+				System.out.println(e);
+				e.printStackTrace();
+			}
+			
+			System.out.println("Running...");
+		}
+		
+	}
+}
+
+
+
+public class InterThread {
+
+	
+
+	public static void main(String[] args) {
+		FirtThread t1=new FirtThread();
+		SecondThread t2=new SecondThread();
+		
+		t1.start();
+		t1.interrupt();
+		t2.start();
+	}
+
+}

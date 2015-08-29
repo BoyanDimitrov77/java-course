@@ -1,0 +1,113 @@
+package FiveThreads;
+
+class Method{
+	synchronized void printMethod(){
+		
+		
+		try{
+			Thread.sleep(5000);
+		}catch(InterruptedException e){
+			System.out.println(e);
+			e.printStackTrace();
+		}
+		System.out.println("The Thread is complete");
+		
+	}
+	
+	
+}
+
+class FirstThread extends Thread{
+	
+	Method obj;
+	public FirstThread( Method obj){
+		this.obj=obj;
+	}
+	
+		
+	
+	public void run(){
+		System.out.println("The thread is started");
+		Thread.currentThread().setName("Thread1");
+		System.out.println("Thread name is :"+Thread.currentThread().getName());
+		
+		obj.printMethod();
+		
+		
+	}
+}
+
+class SecondThread extends Thread{
+	Method obj;
+	
+	public SecondThread(Method obj){
+		this.obj=obj;
+	}
+	
+	public void run(){
+		System.out.println("The thread is started");
+		obj.printMethod();
+	}
+}
+
+class ThirdThread extends Thread{
+	Method obj;
+	
+	public ThirdThread(Method obj){
+	this.obj=obj;	
+	}
+	
+	public void run(){
+		System.out.println("The thread is started");
+		obj.printMethod();
+		
+	}
+}
+
+class ForthThread extends Thread{
+	
+	Method obj;
+	
+	public ForthThread(Method obj){
+		this.obj=obj;
+	}
+	
+	public void run(){
+		System.out.println("The thread is started");
+		obj.printMethod();
+	}
+}
+
+class FifthThread extends Thread{
+	Method obj;
+	
+	public FifthThread(Method obj){
+		this.obj=obj;
+	}
+	public void run(){
+		System.out.println("The thread is started");
+		obj.printMethod();
+	}
+}
+
+public class FiveThreads {
+
+	public static void main(String[] args) {
+		Method obj=new Method();
+		FirstThread t1=new FirstThread(obj);
+        SecondThread t2=new SecondThread(obj);
+        ThirdThread t3=new ThirdThread(obj);
+        ForthThread t4=new ForthThread(obj);
+        FifthThread t5=new FifthThread(obj);
+        
+        t1.run();
+       // t2.run();
+       // t3.run();
+       // t4.run();
+       // t5.run();
+		
+	}
+
+	
+	
+}

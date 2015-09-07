@@ -34,7 +34,7 @@ public class LottoGame {
 				try {
 					LottoGame window = new LottoGame();
 					window.frame.setVisible(true);
-
+				
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -61,7 +61,7 @@ public class LottoGame {
 		JButton btnNewButton = new JButton("Add Player");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
+				
 				AddPlayer add = new AddPlayer();
 				add.setModal(true);
 				add.setVisible(true);
@@ -91,11 +91,12 @@ public class LottoGame {
 
 				}
 
+				
 				btnWinningNumber.setEnabled(false);
 
 			}
 		});
-
+		
 		btnWinningNumber.setBounds(261, 493, 188, 38);
 		frame.getContentPane().add(btnWinningNumber);
 
@@ -104,57 +105,60 @@ public class LottoGame {
 			public void actionPerformed(ActionEvent e) {
 				// Player player=new Player();
 				try {
-					NumberFormat numberFormat = NumberFormat.getNumberInstance();
-					int[] selectedRow = table_1.getSelectedRows();
-					ArrayList<Integer> listNum = new ArrayList<Integer>();
+				NumberFormat numberFormat = NumberFormat.getNumberInstance();
+				int[] selectedRow = table_1.getSelectedRows();
+				ArrayList<Integer> listNum = new ArrayList<Integer>();
 
-					for (int i = 0; i < 5; i++) {
-						int num = 0;
+				for (int i = 0; i < 5; i++) {
+					int num = 0;
+					
 
 						Object t = table_2.getValueAt(i, 0);
 						String t2 = t.toString();
 
 						num = numberFormat.parse(t2).intValue();
+					
+					listNum.add(num);
+				}
+                 
+				
+				for (int i = 0; i <= selectedRow[selectedRow.length - 1]; i++) {
+					int count = 0;
+					for (int j = 1; j <= 5; j++) {
 
-						listNum.add(num);
-					}
-
-					for (int i = 0; i <= selectedRow[selectedRow.length - 1]; i++) {
-						int count = 0;
-						for (int j = 1; j <= 5; j++) {
-
-							int temp = 0;
-
+						int temp = 0;
+						
 							temp = numberFormat.parse(table_1.getValueAt(i, j).toString()).intValue();
-
-							if (listNum.contains(temp)) {
-								count++;
-							}
-
+						
+						if (listNum.contains(temp)) {
+							count++;
 						}
-						if (count == 3) {
-							DefaultTableModel model = (DefaultTableModel) table_3.getModel();
-							String knownNum = String.format("%s-%s numbers", table_1.getValueAt(i, 0), count);
-							model.addRow(new Object[] { knownNum });
-
-						}
-						if (count == 4) {
-							DefaultTableModel model = (DefaultTableModel) table_3.getModel();
-							String knownNum = String.format("%s-%s numbers", table_1.getValueAt(i, 0), count);
-							model.addRow(new Object[] { knownNum });
-
-						}
-						if (count == 5) {
-							DefaultTableModel model = (DefaultTableModel) table_3.getModel();
-							String knownNum = String.format("%s-%s numbers", table_1.getValueAt(i, 0), count);
-							model.addRow(new Object[] { knownNum });
-
-						}
-						count = 0;
 
 					}
+					if (count == 3) {
+						DefaultTableModel model = (DefaultTableModel) table_3.getModel();
+						String knownNum = String.format("%s-%s numbers", table_1.getValueAt(i, 0), count);
+						model.addRow(new Object[] { knownNum });
 
-				} catch (ParseException e1) {
+					}
+					if (count == 4) {
+						DefaultTableModel model = (DefaultTableModel) table_3.getModel();
+						String knownNum = String.format("%s-%s numbers", table_1.getValueAt(i, 0), count);
+						model.addRow(new Object[] { knownNum });
+
+					}
+					if (count == 5) {
+						DefaultTableModel model = (DefaultTableModel) table_3.getModel();
+						String knownNum = String.format("%s-%s numbers", table_1.getValueAt(i, 0), count);
+						model.addRow(new Object[] { knownNum });
+
+					}
+					count = 0;
+					
+
+				}
+				
+				}catch(ParseException e1){
 					JOptionPane.showMessageDialog(null, "Parse Error");
 					e1.printStackTrace();
 				}

@@ -1,0 +1,37 @@
+import java.io.BufferedWriter;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+
+public class Export {
+	try{
+		PrintWriter first = new PrintWriter("first.txt","UTF-8");
+		PrintWriter second=new PrintWriter("second/txt","UTF-8");
+		PrintWriter third=new PrintWriter("third.txt","UTF-8");
+		
+		BufferedWriter fwriter = new BufferedWriter(first);
+		BufferedWriter swriter = new BufferedWriter(first);
+		BufferedWriter twriter = new BufferedWriter(first);
+		
+		 ArrayList<String> list = new ArrayList<String>();
+	     int rowF = table_1.getRowCount();
+	     for (int i = 0; i < row; i++) {
+	         String rowElements = String.format("%L:%b,%b,%b,%b,%b", table_1.getValueAt(i, 0),
+	           table_1.getValueAt(i, 1), table_1.getValueAt(i, 2), table_1.getValueAt(i, 3),table_1.getValueAt(i, 4), table_1.getValueAt(i,5));
+	         list.add(rowElements);
+	     
+	}
+	     for (String rowElements : list) {
+	         fwriter.append(rowElements);
+	         fwriter.newLine();
+	        }
+	        fwriter.close();
+
+	       } catch (Exception ex) {
+	        JOptionPane.showMessageDialog(null, "Error saving file!");
+	       }
+	       JOptionPane.showMessageDialog(null, "Successfully saved file!");
+	      }
+	     
+
+}
+}

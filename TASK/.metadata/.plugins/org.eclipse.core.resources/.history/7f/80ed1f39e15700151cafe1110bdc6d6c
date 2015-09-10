@@ -1,0 +1,117 @@
+import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
+public class Task {
+    public int size;
+	public int [][]matrix;
+    public int [][] reverseMatrix;
+	
+    
+	public Task(int size){
+		this.size=size;
+	}
+	
+	 public int getSize() {
+			return size;
+		}
+	 
+		public void setSize(int size) {
+			this.size = size;
+		}
+
+		public int[][] getMatrix() {
+			return matrix;
+		}
+
+
+		public void setMatrix(int[][] matrix) {
+			this.matrix = matrix;
+		}
+
+		public int[][] getReverseMatrix() {
+			return reverseMatrix;
+		}
+
+
+		public void setReverseMatrix(int[][] reverseMatrix) {
+			this.reverseMatrix = reverseMatrix;
+		}
+
+
+	
+	
+	public static void main(String[] args) {
+		
+
+	}
+
+	public int [][] fillMatrix(Scanner input,int size){
+		
+		this.matrix=new int[size][size];
+		
+		for(int row=0;row<this.matrix.length;row++){
+			for(int colum=0;colum<this.matrix[0].length;colum++){
+				this.matrix[row][colum]=input.nextInt();
+			}
+		}
+		
+		
+		return this.matrix;
+	
+	}
+	
+	public int [][] reverseMatrix(int [][]matrix,int size){
+		this.reverseMatrix=new int[size][size];
+		
+		for(int row=0;row<matrix.length;row++){
+			for(int colum=0;colum<matrix[0].length;colum++){
+				reverseMatrix[row][colum]=matrix[matrix.length-colum-1][row];			}
+		}
+		return this.reverseMatrix;
+	}
+	
+	public void saveMatric(int [][] reverseMatrix){
+		String path="NewMatrix.txt";
+		
+		try{
+			FileWriter fileStream=new FileWriter(path);
+			BufferedWriter br=new BufferedWriter(fileStream);
+			
+			for(int row=0;row<reverseMatrix.length;row++){
+				for(int colum=0;colum<reverseMatrix[0].length;colum++){
+					br.write(" "+ reverseMatrix[row][colum]);
+				}
+				br.newLine();
+			}
+			br.close();
+		}catch(Exception e){
+			System.out.println("Error saving file");
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+			
+		}
+		
+		
+	}
+	
+	public void calculateSum(){
+		int countRow=0;
+		for(int row=0;row<this.matrix.length;row++){
+			int maxRow=Integer.MIN_VALUE;
+			int maxColum=Integer.MIN_VALUE;
+			for(int colum=0;colum<this.matrix[0].length;colum++){
+				if(maxRow<this.matrix[row][colum]){
+					maxRow=this.matrix[row][colum];
+				if(maxColum<this.matrix[colum][row]){
+					maxColum=this.matrix[colum][row];
+				}
+					countRow++;
+				}
+				System.out.println("Row-"+countRow+":"+maxRow);
+				System.out.println("Colum-"+countRow+":"+maxColum);
+				
+			}
+		}
+		
+	}
+}

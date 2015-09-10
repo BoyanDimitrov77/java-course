@@ -1,0 +1,42 @@
+
+import java.util.Scanner;
+public class Test {
+
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in,"UTF-8");
+		
+		System.out.println("Please enter size 2-9");
+		int size=input.nextInt();
+		
+		
+		Task object=new Task(size);
+		int [][]matrix=object.fillMatrix(input, size);
+		
+		System.out.println("1.Rotate matrix");
+		System.out.println("2.Find sum-Row,Colum,left and right diagonal");
+		System.out.println("Please choose option");
+		int choice=input.nextInt();
+		
+		switch(choice){
+		case 1:
+			object.rotateMatrix(matrix, size);
+			object.saveMatric();break;
+			
+		case 2:
+			int result =object.calculateSum();
+			System.out.println("Sum:"+result);
+			
+		}
+		
+		//System.out.println(Arrays.deepToString(matrix));
+
+		//System.out.println(Arrays.deepToString(object.reverseMatrix(matrix,3)));
+		
+		//object.saveMatric(object.reverseMatrix(matrix,3));
+		
+		//int result=object.calculateSum();
+		
+		//System.out.println(result);
+	}
+
+}
